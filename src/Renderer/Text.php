@@ -11,6 +11,8 @@ namespace Dompdf\Renderer;
 
 use Dompdf\Adapter\CPDF;
 use Dompdf\Frame;
+include DOMPDF_DIR . "/I18N/Arabic/Glyphs.php";
+use I18N_Arabic_Glyphs;
 
 /**
  * Renders text frames
@@ -82,7 +84,6 @@ class Text extends AbstractRenderer
         );*/
 
         if ( ! class_exists( 'I18N_Arabic' ) ){
-            require_once("../../I18N/Arabic/Glyphs.php" );
             $Arabic = new I18N_Arabic_Glyphs('Glyphs');
             $text = $Arabic->utf8Glyphs($text);
         }
