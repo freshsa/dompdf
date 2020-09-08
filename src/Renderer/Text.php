@@ -83,7 +83,7 @@ class Text extends AbstractRenderer
           $text
         );*/
 
-        if ( ! class_exists( 'I18N_Arabic' ) && is_numeric($text)){
+        if ( ! class_exists( 'I18N_Arabic' ) && !is_numeric($text)){
             $Arabic = new I18N_Arabic_Glyphs('Glyphs');
             $text = $Arabic->utf8Glyphs($text);
         }
